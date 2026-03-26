@@ -45,6 +45,11 @@ h1 {
     line-height: 1.5;
 }
 
+.download-list {
+    display: grid;
+    gap: 14px;
+}
+
 .download-button {
     display: inline-block;
     padding: 14px 18px;

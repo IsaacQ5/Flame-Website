@@ -1,6 +1,8 @@
-const downloadButton = document.getElementById("download-button");
+const downloadButtons = document.querySelectorAll(".download-button");
 const statusText = document.getElementById("status");
 
-downloadButton.addEventListener("click", () => {
-    statusText.textContent = "Downloading python-code.zip...";
+downloadButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        statusText.textContent = `Downloading ${button.dataset.file}...`;
+    });
 });
