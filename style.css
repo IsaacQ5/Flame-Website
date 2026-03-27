@@ -5,80 +5,75 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: "Courier New", monospace;
-    background: #cf890f;
-    color: #111111;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background: #1f1f1f;
 }
 
-.wrap {
+.hero {
+    position: relative;
     min-height: 100vh;
     display: grid;
     place-items: center;
     padding: 24px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url("assets/Screenshot 2026-03-27 082744.png") center center / cover no-repeat;
 }
 
-.box {
-    width: min(100%, 480px);
-    padding: 28px;
-    background: #f5f1dd;
-    border: 3px solid #111111;
-    box-shadow: 10px 10px 0 #111111;
-    transform: rotate(-1deg);
+.hero-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(20, 20, 20, 0.24);
+    backdrop-filter: blur(4px);
+    text-align: center;
 }
 
-.tiny {
-    margin: 0 0 8px;
-    font-size: 12px;
+.eyebrow {
+    margin: 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 h1 {
-    margin: 0 0 12px;
-    font-size: clamp(28px, 6vw, 44px);
-    line-height: 0.95;
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
 }
 
-.note {
-    margin: 0 0 22px;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.download-list {
-    display: grid;
-    gap: 14px;
-}
-
-.download-button {
-    display: inline-block;
-    padding: 14px 18px;
-    background: #ffcf33;
-    color: #111111;
+.install-button,
+.source-link {
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    border: 3px solid #111111;
-    box-shadow: 6px 6px 0 #111111;
 }
 
-.download-button:hover,
-.download-button:focus-visible {
-    background: #ffb703;
+.install-button {
+    padding: 12px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.16);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 160ms ease, transform 160ms ease;
 }
 
-.status {
-    margin: 18px 0 0;
-    font-size: 14px;
+.install-button:hover,
+.install-button:focus-visible {
+    background: rgba(255, 255, 255, 0.24);
+    transform: translateY(-1px);
 }
 
-@media (max-width: 520px) {
-    .box {
-        padding: 22px;
-        transform: none;
-    }
+.source-link {
+    font-size: 0.92rem;
+    opacity: 0.9;
+}
 
-    .download-button {
-        width: 100%;
-        text-align: center;
+@media (max-width: 640px) {
+    .hero-overlay {
+        width: min(100%, 320px);
     }
 }

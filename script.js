@@ -3,6 +3,10 @@ const statusText = document.getElementById("status");
 
 downloadButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        statusText.textContent = `Downloading ${button.dataset.file}...`;
+        const fileName = button.dataset.file;
+        const label = button.dataset.label;
+        const size = button.dataset.size;
+
+        statusText.textContent = `Starting ${fileName} (${size}) - ${label}.`;
     });
 });
